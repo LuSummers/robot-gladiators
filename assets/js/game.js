@@ -3,16 +3,21 @@
 var playerName = window.prompt ("what is your robot's name?");
 var playerHealth = 100;
 var playerAttack=10;
+var playerMoney = 10;
 
 //you can also log multiple values at once like this
 console.log (playerName, playerAttack, playerHealth);
-var enemyName = "Roberto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]
+var enemy1 = "Roborto";
+var enemy2 = "Amy Android";
+var enemy3 = "Robo Trumble"
 var enemyHealth= 50;
 var enemyAttack =12;
 
-var playerMoney = 10;
+
+
  
-var fight = function() {
+var fight = function(enemyName) {
     //alert players that they are starting the round
 
     
@@ -29,31 +34,32 @@ var fight = function() {
 window.alert ("Welcome to Robot Gladiators"); 
 var promptFight =window.prompt ("Would you like to FIGHT or SKIP this?")
 
-//if player choses to fight, then fisht
+//if player choses to fight, then fight
     if (promptFight==="fight"|| promptFight=== "FIGHT") {
         //renoce enemy's health bu subtracting the amount set in the playerAttack variable
     
+        
     enemyHealth = enemyHealth - playerAttack;
     console.log (
-        playerName + " attacked " + enemyName + ". " + enemyName + " now has "+ enemyHealth + "health remaining"
+        playerName + " attacked " + enemyNames + ". " + enemyNames + " now has "+ enemyHealth + "health remaining"
      );
 
      playerHealth = playerHealth - enemyAttack;
      
      console.log (
-        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + "health remaining"
+        enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + "health remaining"
      );
 
      
 
      console.log (
-        playerName + " attacked " + enemyName + ". " + enemyName + " now has "+ enemyHealth + "health remaining"
+        playerName + " attacked " + enemyNames + ". " + enemyNames + " now has "+ enemyHealth + "health remaining"
      );
 
      playerHealth = playerHealth - enemyAttack;
      
      console.log (
-        enemyName + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + "health remaining"
+        enemyNames + " attacked " + playerName + ". " + playerName + " now has " + playerHealth + "health remaining"
      );
 
      var playerHealth= 100;
@@ -69,14 +75,14 @@ var promptFight =window.prompt ("Would you like to FIGHT or SKIP this?")
          }else {console.log (" This will run instead")}
          
     console.log (
-            playerName + " attacked " + enemyName + ". " + enemyName + " now has "+ enemyHealth + "health remaining"
+            playerName + " attacked " + enemyNames + ". " + enemyNames + " now has "+ enemyHealth + "health remaining"
          );
          //check enemy's health
          if (enemyHealth <= 0) {
-             window.alert (enemyName + " has died! ");
+             window.alert (enemyNames + " has died! ");
          }
          else {
-             window.alert (enemyName + " still has " + enemyHealth + "health left.");
+             window.alert (enemyNames + " still has " + enemyHealth + "health left.");
          }
 
          //check player's health
@@ -103,5 +109,13 @@ var promptFight =window.prompt ("Would you like to FIGHT or SKIP this?")
      }
         window.alert (playerName + " has choses to skip the fight!");
     } else {
-        window.alert( "You need to coose a valid option. Try again!")
+        window.alert( "You need to choose a valid option. Try again!")
     }
+for (var i=0; i < enemyNames.length; i++) {
+    console.log (enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames [i] + " is at " + i + (" index"));
+
+   for (var i=0; i < enemyNames.length; i++) {
+       fight(enemyNames[i]);
+   }}
